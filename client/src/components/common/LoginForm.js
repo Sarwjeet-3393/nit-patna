@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { PiEyeSlashDuotone } from "react-icons/pi";
+import { Input } from "antd";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -20,14 +21,14 @@ const LoginForm = () => {
             required
           />
           <label className="block  text-sm font-medium">Password</label>
-          <input
-            className="border border-gray-300 rounded-lg px-3 py-2 w-full"
-            type={showPassword ? "text" : "password"}
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <Input.Password placeholder="Enter Password" className="px-3 py-2" />
+
+          <button
+            type="submit"
+            className="p-2 bg-blue-400 text-white rounded-lg mt-2"
+          >
+            Login
+          </button>
         </form>
       </div>
     </>

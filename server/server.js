@@ -8,6 +8,14 @@ const morgan = require("morgan");
 //imports
 const connectDB = require("./config/db.js");
 const studentRoutes = require("./routes/studentRoutes.js");
+const materialRoutes = require("./routes/materialRoutes.js");
+const noticeRoutes = require("./routes/noticeRoutes.js");
+const employeeRoutes = require("./routes/employeeRoutes.js");
+const holidayRoutes = require("./routes/holidayRoutes.js");
+const eventRoutes = require("./routes/eventRoutes.js");
+const syllabusRoutes = require("./routes/syllabusRoutes.js");
+const routineRoutes = require("./routes/routineRoutes.js");
+const attendanceRoutes = require("./routes/attendanceRoutes.js");
 
 /* CONFIGURATION */
 const app = express();
@@ -20,6 +28,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use("/api/student", studentRoutes);
+app.use("/api/material", materialRoutes);
+app.use("/api/notice", noticeRoutes);
+app.use("/api/employee", employeeRoutes);
+app.use("/api/holiday", holidayRoutes);
+app.use("/api/event", eventRoutes);
+app.use("/api/syllabus", syllabusRoutes);
+app.use("/api/routine", routineRoutes);
+app.use("/api/attendance", attendanceRoutes);
 
 /* MongoDB */
 connectDB();

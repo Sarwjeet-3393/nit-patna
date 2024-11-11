@@ -4,19 +4,15 @@ import AttendancePopUp from "@/components/faculty/AttendancePopUp";
 import Attendance from "@/components/faculty/Attendance";
 
 const FacultyAttendence = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
-
+  const [open, setOpen] = useState(false);
   const handleOk = () => {
-    setIsModalVisible(false);
+    setOpen(true);
   };
 
-  const handleCancel = () => {
-    setIsModalVisible(false);
+  const handleClose = () => {
+    setOpen(false);
   };
+
   return (
     <>
       <div className="block">
@@ -24,7 +20,7 @@ const FacultyAttendence = () => {
           <h2 className="mb-3 text-xl font-bold">Attendence</h2>
           <button
             className="p-1 bg-indigo-500 float-right rounded-md text-white"
-            onClick={showModal}
+            onClick={handleOk}
           >
             Take Attendence
           </button>
@@ -38,11 +34,7 @@ const FacultyAttendence = () => {
           <Attendance />
         </div>
       </div>
-      <AttendancePopUp
-        visible={isModalVisible}
-        handleOk={handleOk}
-        handleCancel={handleCancel}
-      />
+      <AttendancePopUp handleOk={open} handleCancel={handleClose} />
     </>
   );
 };

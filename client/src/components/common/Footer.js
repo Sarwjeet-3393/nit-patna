@@ -57,9 +57,9 @@ const Footer = () => {
         <div className="container text-sm py-2 mx-auto flex justify-between border-t border-blue-600">
           <div className="flex space-x-4">
             <p>
-              Made by: Satyam Prakash (2303069), Aditya Kumar (2303073), Prabhat
-              Kumar (2303075), Priyanshu Goshwami (2303105), Md. Kaif Ali
-              (2351004). All rights reserved.
+             
+             
+             Sarwjeet kumar. All rights reserved.
             </p>
           </div>
         </div>

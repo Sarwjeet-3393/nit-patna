@@ -1,6 +1,7 @@
 import Footer from "@/components/common/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import Books from "@/components/pages/home/Books";
+import ClassRoutine from "@/components/pages/home/ClassRoutine";
 import Events from "@/components/pages/home/Events";
 import FacultyMaterial from "@/components/pages/home/FacultyMaterial";
 import PYQs from "@/components/pages/home/PYQSection";
@@ -15,22 +16,30 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <div className="container mx-auto">
-        <div className="grid max-sm:px-3 sm:grid-cols-2 gap-5">
-          <FacultyMaterial />
-          <Books />
-          <PYQs />
-          <StudyMaterial />
-          <SeniorsAssisgnment />
+      <section className="bg-gray-50 py-3">
+        <div className="grid max-sm:px-3 sm:grid-cols-2 gap-5 container mx-auto">
+          <div className="border rounded-lg shadow-md p-2 overflow-x-hidden overflow-y-auto max-h-[484px]">
+            <ClassRoutine />
+          </div>
+          <div className="border rounded-lg shadow-md p-2 overflow-x-hidden overflow-y-auto max-h-[484px]">
+            <FacultyMaterial />
+            <Books />
+            <PYQs />
+            <StudyMaterial />
+            <SeniorsAssisgnment />
+            <Researchs />
+          </div>
+        </div>
+      </section>
+      <div className="block">
+        <section className="container mx-auto my-3">
           <Posts />
-          <Researchs />
           <Scholarships />
-        </div>
-        <div className="block">
-          <Professors />
-          <Events />
-        </div>
+        </section>
+        <Professors />
+        <Events />
       </div>
+
       <Footer />
     </main>
   );

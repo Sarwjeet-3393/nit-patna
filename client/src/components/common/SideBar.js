@@ -8,7 +8,7 @@ const PanelSidebar = ({ children }) => {
           <BiUserCircle size={60} />
         </div>
         <h1 className="text-base text-center cursor-pointer font-bold pb-4 w-full">
-          Satyam Prakash
+          Sarwjeet kumar
         </h1>
         {children}
       </div>

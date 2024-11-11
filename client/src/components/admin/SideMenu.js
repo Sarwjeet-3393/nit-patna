@@ -5,37 +5,42 @@ export const AdminMenuItems = [
   {
     text: "Dashboard",
     icon: <CiUser size={16} />,
-    path: "/Admin/dashboard",
+    path: "/admin/dashboard",
   },
   {
     text: "Attendance",
     icon: <CiUser size={16} />,
-    path: "/Admin/attendance",
+    path: "/admin/attendance",
   },
   {
     text: "Study Materials",
     icon: <CiUser size={16} />,
-    path: "/Admin/materials",
+    path: "/admin/materials",
   },
   {
     text: "Students",
     icon: <CiUser size={16} />,
-    path: "/Admin/students",
+    path: "/admin/students",
+  },
+  {
+    text: "Faculty",
+    icon: <CiUser size={16} />,
+    path: "/admin/faculty",
   },
   {
     text: "Class Routine",
     icon: <CiUser size={16} />,
-    path: "/Admin/routine",
+    path: "/admin/routine",
   },
   {
     text: "Syllabus",
     icon: <CiUser size={16} />,
-    path: "/Admin/syllabus",
+    path: "/admin/syllabus",
   },
   {
     text: "Noticeboard",
     icon: <CiUser size={16} />,
-    path: "/Admin/notice",
+    path: "/admin/notice",
   },
   {
     text: "Events",

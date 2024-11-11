@@ -51,7 +51,21 @@ const studentAttendanceList = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+const getStudentFaculty = async (req, res) => {
+  try {
+    const students = await Student.find();
+
+    res.status(200).json(students);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while fetching students" });
+  }
+};
 module.exports = {
   registerStudent,
   studentAttendanceList,
+  getStudentFaculty,
 };

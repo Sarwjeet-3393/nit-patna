@@ -12,6 +12,36 @@ import {
 } from "antd";
 const { Option } = Select;
 export default function StudentAdd() {
+  const [form] = Form.useForm();
+
+  const handleSubmit = async () => {
+    try {
+      const formData = await form.validateFields();
+      console.log(formData);
+
+      const response = await fetch(
+        `${process.env.API_URL}student/register`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      // Check the response status or handle accordingly
+      if (response.ok) {
+        form.resetFields();
+        console.log("Data saved successfully!");
+      } else {
+        console.error("Failed to save data");
+      }
+    } catch (error) {
+      console.error("Error saving data", error);
+    }
+  };
+
   return (
     <>
       <Drawer
@@ -20,14 +50,11 @@ export default function StudentAdd() {
         open={true}
         extra={
           <Space>
-            {/* <Button>Cancel</Button> */}
-            <Button type="primary" className="bg-[#1677ff!important]">
-              Submit
-            </Button>
+            <Button>Cancel</Button>
           </Space>
         }
       >
-        <Form layout="vertical">
+        <Form layout="vertical" form={form} onFinish={handleSubmit}>
           <Row gutter={16}>
             <Col span={12}>
               <Form.Item
@@ -70,11 +97,7 @@ export default function StudentAdd() {
                   },
                 ]}
               >
-                <Input
-                  type="email"
-                  placeholder="Enter college email"
-                  addonAfter="@nitp.ac.in"
-                />
+                <Input type="email" placeholder="Enter college email" />
               </Form.Item>
             </Col>
             <Col span={12}>
@@ -89,7 +112,7 @@ export default function StudentAdd() {
                 ]}
               >
                 <Select placeholder="Please choose the class">
-                  <Option value="Civil Engineering">Civil Engineering</Option>
+                  <Option value="computer science and engineering">computer science and Engineering</Option>
                 </Select>
               </Form.Item>
             </Col>
@@ -167,6 +190,14 @@ export default function StudentAdd() {
               </Form.Item>
             </Col>
           </Row>
+          <Form.Item>
+            <button
+              type="submit"
+              className="p-2 bg-[#1677ff] text-white rounded-lg"
+            >
+              Add Student
+            </button>
+          </Form.Item>
         </Form>
       </Drawer>
     </>

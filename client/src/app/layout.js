@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "NIT Patna | EAA Project - Satyam Prakash",
+  title: "NIT Patna sarwjeet kumar",
   description: "NIT Patna First Year UG Students Website",
 };
 
