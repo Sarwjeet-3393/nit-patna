@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Club{
+export default function Club() {
     return (
         <>
-        <p>hello club information</p>
+            <p>hello club information</p>
         </>
-    )
+    );
 }
